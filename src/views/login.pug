@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+    title Login
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="/css/style1.css")
+
+  body
+    .card
+      h2 Login
+
+      form(method="POST", action="/api/auth/login")
+        label Email
+        input(
+          type="email"
+          name="email"
+          placeholder="Enter email"
+          required
+        )
+
+        label Password
+        input(
+          type="password"
+          name="password"
+          placeholder="Enter password"
+          required
+        )
+
+        button(type="submit") Login
+
+      a(href="/register") New user? Register

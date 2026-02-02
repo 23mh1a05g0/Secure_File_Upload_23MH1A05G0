@@ -1,0 +1,48 @@
+doctype html
+html
+  head
+    title Register
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="/css/style1.css")
+
+  body
+    .card
+      h2 Register
+
+      form(method="POST", action="/api/auth/register")
+        label Username
+        input(
+          type="text"
+          name="username"
+          placeholder="Enter username"
+          required
+        )
+
+        label Email
+        input(
+          type="email"
+          name="email"
+          placeholder="Enter email"
+          required
+        )
+
+        label Phone
+        input(
+          type="text"
+          name="phone"
+          placeholder="Enter phone number"
+          required
+        )
+
+        label Password
+        input(
+          type="password"
+          name="password"
+          placeholder="Enter password"
+          required
+        )
+
+        button(type="submit") Register
+
+      a(href="/login") Already have an account? Login

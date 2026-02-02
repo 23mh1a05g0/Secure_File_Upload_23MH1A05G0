@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+    title Secure File Upload
+    link(rel="stylesheet", href="/css/style.css")
+    
+  body
+    .app-container
+
+      // HEADER
+      .top-bar
+        h2 Secure File Upload
+        form#uploadForm(enctype="multipart/form-data")
+          input(type="file", name="file", required)
+          button(type="submit") Upload File
+
+      // TABLE
+      .content
+        h3 Uploaded Files
+
+        table
+          thead
+            tr
+              th #
+              th File Name
+              th Uploaded At
+              th Action
+          tbody#fileTable
+            tr
+              td(colspan="4") Loading files...
+
+    script(src="/js/dashboard.js")

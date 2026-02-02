@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    title Email Verification
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    .app-container
+
+      .top-bar
+        h2 Email Verification
+
+      .content
+        table
+          tr
+            td Email
+            td
+              input(type="email", id="email", placeholder="Enter your email")
+              br
+              button(onclick="sendOtp()") Send OTP
+
+          tr
+            td OTP
+            td
+              input(type="text", id="otp", placeholder="Enter OTP")
+              br
+              button(onclick="verifyOtp()") Verify & Download
+
+    script(src="/js/otp.js")

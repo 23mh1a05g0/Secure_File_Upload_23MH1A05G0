@@ -7,17 +7,13 @@ const mongoose = require("mongoose");
 
 const s3 = new AWS.S3();
 
-/* =======================
-   REQUEST DOWNLOAD (SEND OTP)
-======================= */
 const requestDownload = async (req, res) => {
   try {
     const { email } = req.body;
     const { fileId } = req.params;
 
-    console.log("FILE ID RECEIVED =>", fileId); // 🔍 DEBUG LINE
+    console.log("FILE ID RECEIVED =>", fileId); 
 
-    // ✅ VALIDATE ObjectId BEFORE QUERY
     if (!mongoose.Types.ObjectId.isValid(fileId)) {
       return res.status(400).json({
         message: "Invalid fileId"
@@ -60,14 +56,11 @@ const requestDownload = async (req, res) => {
   }
 };
 
-/* =======================
-   VERIFY OTP & DOWNLOAD
-======================= */
 const verifyAndDownload = async (req, res) => {
   try {
     const { email, otp, fileId } = req.body;
 
-    console.log("VERIFY FILE ID =>", fileId); // 🔍 DEBUG
+    console.log("VERIFY FILE ID =>", fileId);
 
     if (!mongoose.Types.ObjectId.isValid(fileId)) {
       return res.status(400).json({
